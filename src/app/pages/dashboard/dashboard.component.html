@@ -1,0 +1,70 @@
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Camunda Dashboard</h1>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<div class="content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-8">
+              <div class="card" style="max-height: 680px; scroll-behavior:auto;">
+                  <div class="card-header">
+                      <h3 class="card-title">Camunda Process</h3>
+
+                      <div class="card-tools">
+                          <div class="input-group input-group-sm" style="width: 150px;">
+                              <!-- <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                              <div class="input-group-append">
+                              <button type="submit" class="btn btn-default">
+                                  <i class="fas fa-search"></i>
+                              </button>
+                              </div> -->
+                          </div>
+                      </div>
+                  </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                  <table class="table table-hover text-nowrap">
+                    <thead>
+                      <tr>
+                        <th>Process Name</th><th>Version</th><th>Number Of Instances</th><th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr *ngFor="let item of data">
+                        <td (click)="navigateToProcessInstance(item.description, item.id, item.instances)">{{ item.description }}</td>
+
+                       
+                        <td>{{item.version}}</td>
+                        <td>
+                          <span class="message" *ngIf="item.instances === 0; else numberAvailable">No instances available</span>
+                          <ng-template #numberAvailable>{{item.instances}}</ng-template>
+                          
+                        </td>
+                          <td>
+                              <div class="col-md-3"><button type="button" class="btn btn-primary" (click)="startProcess(item.key)"
+                              >Start Process</button></div>
+                          </td>
+                        
+
+                      </tr>
+                    </tbody>
+                  </table>
+                </div> 
+              <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+          </div>
+          
+      </div>
+  </div><!-- /.container-fluid -->
+</div>
+
+<!-- /.content -->
