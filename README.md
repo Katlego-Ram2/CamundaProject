@@ -1,23 +1,29 @@
-## Development server
+# Camunda Process Automation Project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![Process Diagram](assets/download.png)
 
-## Code scaffolding
+This project is a full-stack application built using:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Camunda** for business process automation (BPMN workflows)
+- **Spring Boot** as the backend service layer
+- **Angular** for the frontend user interface
 
-## Build
+It automates [insert your specific process, e.g., "leave request approval", "invoice management"] by leveraging BPMN-based workflows and integrates with APIs and databases to provide a robust automation solution.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+---
 
-## Running unit tests
+## 🛠 Project Structure
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- `backend/` — Spring Boot project with Camunda engine and REST APIs
+- `frontend/` — Angular project for user interface and task management
+- `assets/` — Images and static assets (e.g., BPMN diagrams)
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## 🚀 Development Server (Angular Frontend)
 
-## Further help
+Run the Angular frontend:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```bash
+cd frontend
+ng serve
